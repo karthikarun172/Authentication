@@ -19,7 +19,7 @@ function Login() {
     axios
       .post("https://guarded-crag-39247.herokuapp.com/api/login", formValues)
       .then((res) => window.localStorage.setItem("Token", res.data.token))
-      .then(() => navigate("/"));
+      .then(() => navigate("/", { replace: true }));
   };
 
   return (
